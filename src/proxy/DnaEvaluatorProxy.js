@@ -25,6 +25,7 @@ class DnaEvaluatorProxy extends DnaEvaluator {
     const applicantData = {
       id: dna.join(""),
       isMutant: isMutant,
+      dna: dna,
       createdAt: new Date().toISOString(),
     };
     return await new DnaService().registerDna(applicantData);

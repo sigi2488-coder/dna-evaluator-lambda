@@ -3,7 +3,9 @@ const aws = require("aws-sdk");
 
 class DnaService {
   constructor() {
-    this.dynamoDb = new aws.DynamoDB.DocumentClient({ region: "us-east-2" });
+    this.dynamoDb = new aws.DynamoDB.DocumentClient({
+      region: constants.REGION_AWS,
+    });
   }
 
   /**
