@@ -9,7 +9,7 @@ class DnaService {
   }
 
   /**
-   * @name evaluateHorizontalDnaSequence
+   * @name registerDna
    * @param {Array} applicantsData - Example: {id:'xxx',isMutant:false, createdAt:'2022-01-02'}
    * @return {Number}
    *
