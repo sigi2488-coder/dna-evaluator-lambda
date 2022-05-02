@@ -8,8 +8,8 @@ class DnaEvaluatorProxy extends DnaEvaluator {
 
   /**
    * @param {Array} dna
-   * @return {boolean}
    * @name isMutant
+   * @return {boolean}
    */
   isMutant(dna) {
     if (this.evaluateHorizontalDnaSequence(dna) < 2) {
@@ -21,6 +21,11 @@ class DnaEvaluatorProxy extends DnaEvaluator {
     return this.seqsCounter >= 2;
   }
 
+  /**
+   * @param {Array} dna
+   * @param {boolean} isMutant
+   * @name registerApplicant
+   */
   async registerApplicant(dna, isMutant) {
     const applicantData = {
       id: dna.join(""),

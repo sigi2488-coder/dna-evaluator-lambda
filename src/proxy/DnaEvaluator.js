@@ -55,7 +55,7 @@ class DnaEvaluator {
         DI: [],
         DIS: [],
       };
-      if (wide >= 4) {
+      if (wide >= constants.MINIMUM_SEQUENCE) {
         for (let index = 0; index < wide; index++) {
           points["DS"].push(dna[diagonals + index][index]);
           points["DII"].push(dnaInvert[diagonals + index][index]);
