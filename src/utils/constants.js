@@ -6,4 +6,7 @@ module.exports = {
   REGION_AWS: "us-east-1",
   REGION_AWS: "us-east-1",
   MINIMUM_SEQUENCE: 4,
+  HEADER: {
+    "Content-Type": "application/json",
+  },
 };

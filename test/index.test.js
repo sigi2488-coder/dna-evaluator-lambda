@@ -20,16 +20,29 @@ describe("index", () => {
   });
   describe("index handler ", () => {
     it("index handler. fail", async () => {
-      const result = await index.handler({ dna: dna });
+      const event = {
+        body: JSON.stringify({
+          dna: dna,
+        }),
+      };
+      const result = await index.handler(event);
       expect(result.statusCode).toBe(constants.HTTP_BUSSINES_CODE);
     });
     it("index handler. Success", async () => {
-      const result = await index.handler({ dna: dnaExistDiag });
+      const event = {
+        body: JSON.stringify({
+          dna: dnaExistDiag,
+        }),
+      };
+      const result = await index.handler(event);
       expect(result.statusCode).toBe(constants.HTTP_SUCCESS_CODE);
     });
     it("index handler. Error", async () => {
       try {
-        await index.handler({});
+        const event = {
+          body: JSON.stringify({}),
+        };
+        await index.handler(event);
       } catch (error) {
         expect(error.message).toBe(
           "Cannot read property 'forEach' of undefined"
